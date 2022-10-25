@@ -1,0 +1,141 @@
+:root {
+    --clouds: #ecf0f1;
+    --midnight-blue: #2c3e50;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    color: var(--clouds);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--midnight-blue);
+}
+
+header {
+    padding: 20px 0;
+}
+
+h1 {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: calc(100vh - 78px);
+}
+
+.view {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 90%;
+    border: 5px solid var(--clouds);
+    border-radius: 10px;
+    padding: 20px 5px;
+}
+
+.result {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: end;
+}
+
+.stack {
+    margin-top: 10px;
+    text-align: end;
+    width: 90%;
+}
+
+.buttons-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    padding: 5px;
+}
+
+button {
+    color: var(--midnight-blue);
+    font-weight: bold;
+    background-color: var(--clouds);
+    border: 5px solid var(--clouds);
+    border-radius: 10px;
+    font-size: 25px;
+}
+
+button:active {
+    background-color: var(--midnight-blue);
+    color: var(--clouds);
+}
+
+.btn-zero {
+    grid-column: 1 / span 3;
+}
+
+.btn-gcd {
+    grid-row: 9;
+    grid-column: 2;
+}
+
+.btn-enter {
+    grid-row: 7 / span 3;
+    grid-column: 3;
+}
+
+@media screen and (min-width: 800px) {
+    main {
+        flex-direction: row;
+    }
+
+    .view {
+        width: 50%;
+    }
+
+    .buttons-box {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    button {
+        font-size: 22px;
+    }
+
+    .btn-backspace {
+        grid-column: 3 / span 2;
+    }
+
+    .btn-zero {
+        grid-column: 1 / span 3;
+    }
+
+    .btn-gcd {
+        grid-row: 2;
+        grid-column: 4;
+    }
+
+    .btn-prime {
+        grid-row: 3;
+        grid-column: 4;
+    }
+
+    .btn-sum {
+        grid-row: 4;
+        grid-column: 4;
+    }
+
+    .btn-enter {
+        grid-row: 5 / span 3;
+        grid-column: 4;
+    }
+}

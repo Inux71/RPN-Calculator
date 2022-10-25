@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kalkulator ONP</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/calculator.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Kalkulator ONP</h1>
+    </header>
+
+    <main>
+        <div class="view">
+            <div id="result-box" class="container result"></div>
+
+            <div id="stack-box" class="stack"></div>
+
+            <div id="factorization-box"></div>
+        </div>
+        
+        <div class="view">
+            <!-- 0-10 + - * / % ^ GCD <-> ENTER PRIME SUM = C <- -->
+            <div class="container buttons-box">
+                <button id="btn-clear">C</button>
+                <button id="btn-swap">&lt;-&gt;</button>
+                <button id="btn-backspace" class="btn-backspace">&lt;-</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button class="btn-zero">0</button>
+                <button class="btn-operator">+</button>
+                <button class="btn-operator">-</button>
+                <button class="btn-operator">*</button>
+                <button class="btn-operator">/</button>
+                <button class="btn-operator">^</button>
+                <button class="btn-operator">%</button>
+                <button class="btn-gcd btn-operator">GCD</button>
+                <button class="btn-prime btn-operator">PRIME</button>
+                <button class="btn-sum btn-operator">SUM</button>
+                <button id="btn-enter" class="btn-enter">ENTER</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="./index.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
