@@ -51,6 +51,7 @@ main {
     font-size: 25px;
     font-weight: bold;
     text-align: end;
+    overflow: scroll;
 }
 
 .stack {

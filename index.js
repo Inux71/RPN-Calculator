@@ -143,7 +143,11 @@ buttons.forEach(button => button.addEventListener("click", () => {
         }
 
     } else if (button.id == "btn-enter") {
-        stack.push(parseInt(resultBox.textContent));
+        if (parseInt(resultBox.textContent) > Number.MAX_SAFE_INTEGER) {
+            alert("Liczba jest zbyt duża!");
+        } else {
+            stack.push(parseInt(resultBox.textContent));
+        }
 
         resultBox.textContent = 0;
 
@@ -186,7 +190,12 @@ buttons.forEach(button => button.addEventListener("click", () => {
         if (stack.length > 1) {
             switch (button.textContent) {
                 case "+":
-                    stack[stack.length - 1] += stack[stack.length - 2]; 
+                    if ((stack[stack.length - 1] + stack[stack.length - 2]) > Number.MAX_SAFE_INTEGER) {
+                        alert("Liczba jest zbyt duża!");
+                    } else {
+                        stack[stack.length - 1] += stack[stack.length - 2]; 
+                    }
+                    
                     break;
     
                 case "-":
@@ -194,7 +203,12 @@ buttons.forEach(button => button.addEventListener("click", () => {
                     break;  
     
                 case "*":
-                    stack[stack.length - 1] *= stack[stack.length - 2]; 
+                    if ((stack[stack.length - 1] * stack[stack.length - 2]) > Number.MAX_SAFE_INTEGER) {
+                        alert("Liczba jest zbyt duża!");
+                    } else {
+                        stack[stack.length - 1] *= stack[stack.length - 2]; 
+                    }
+                    
                     break;
     
                 case "/":
@@ -212,7 +226,12 @@ buttons.forEach(button => button.addEventListener("click", () => {
                     break;  
     
                 case "^":
-                    stack[stack.length - 1] = Math.pow(stack[stack.length - 2], stack[stack.length - 1]);
+                    if (Math.pow(stack[stack.length - 2], stack[stack.length - 1]) > Number.MAX_SAFE_INTEGER) {
+                        alert("Liczba jest zbyt duża!");
+                    } else {
+                        stack[stack.length - 1] = Math.pow(stack[stack.length - 2], stack[stack.length - 1]);
+                    }
+                    
                     break; 
                     
                 case "GCD":
