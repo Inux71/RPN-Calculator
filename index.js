@@ -193,27 +193,48 @@ buttons.forEach(button => button.addEventListener("click", () => {
                     if ((stack[stack.length - 1] + stack[stack.length - 2]) > Number.MAX_SAFE_INTEGER) {
                         alert("Liczba jest zbyt duża!");
                     } else {
-                        stack[stack.length - 1] += stack[stack.length - 2]; 
+                        const result = stack[stack.length - 1] + stack[stack.length - 2]; 
+
+                        stack.pop();
+                        stack.pop();
+
+                        stack.push(result);
                     }
                     
                     break;
     
                 case "-":
-                    stack[stack.length - 1] = Math.abs(stack[stack.length - 2] - stack[stack.length - 1]);
+                    result = Math.abs(stack[stack.length - 2] - stack[stack.length - 1]);
+
+                    stack.pop();
+                    stack.pop();
+
+                    stack.push(result);
+
                     break;  
     
                 case "*":
                     if ((stack[stack.length - 1] * stack[stack.length - 2]) > Number.MAX_SAFE_INTEGER) {
                         alert("Liczba jest zbyt duża!");
                     } else {
-                        stack[stack.length - 1] *= stack[stack.length - 2]; 
+                        const result = stack[stack.length - 1] * stack[stack.length - 2];
+                        
+                        stack.pop();
+                        stack.pop();
+
+                        stack.push(result);
                     }
                     
                     break;
     
                 case "/":
                     if (stack[stack.length - 1] != 0) {
-                        stack[stack.length - 1] = Math.floor(stack[stack.length - 2] / stack[stack.length - 1]);
+                        const result = Math.floor(stack[stack.length - 2] / stack[stack.length - 1]);
+
+                        stack.pop();
+                        stack.pop();
+
+                        stack.push(result);
 
                     } else {
                         alert("Nie wolno dzielić przez 0");
@@ -222,20 +243,36 @@ buttons.forEach(button => button.addEventListener("click", () => {
                     break; 
     
                 case "%":
-                    stack[stack.length - 1] = stack[stack.length - 2] % stack[stack.length - 1];
+                    const result = stack[stack.length - 2] % stack[stack.length - 1];
+
+                    stack.pop();
+                    stack.pop();
+
+                    stack.push(result);
                     break;  
     
                 case "^":
                     if (Math.pow(stack[stack.length - 2], stack[stack.length - 1]) > Number.MAX_SAFE_INTEGER) {
                         alert("Liczba jest zbyt duża!");
                     } else {
-                        stack[stack.length - 1] = Math.pow(stack[stack.length - 2], stack[stack.length - 1]);
+                        const result = Math.pow(stack[stack.length - 2], stack[stack.length - 1]);
+
+                        stack.pop();
+                        stack.pop();
+
+                        stack.push(result);
                     }
                     
                     break; 
                     
                 case "GCD":
-                    stack[stack.length - 1] = GCD(stack[stack.length - 2], stack[stack.length - 1]);
+                    result = GCD(stack[stack.length - 2], stack[stack.length - 1]);
+
+                    stack.pop();
+                    stack.pop();
+
+                    stack.push(result);
+                    
                     break;
     
                 default:
